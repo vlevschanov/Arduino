@@ -1,0 +1,9 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+use_frameworks!
+
+target 'ESP8266_LED' do
+
+  pod 'SwiftWebSocket', '~> 2.6'
+
+end
