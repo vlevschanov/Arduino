@@ -62,7 +62,7 @@ void setup() {
   
     Serial.begin(115200);
 
-    Serial.setDebugOutput(true);
+    //Serial.setDebugOutput(true);
 
     Serial.println();
     Serial.println();
@@ -74,11 +74,13 @@ void setup() {
         delay(1000);
     }
 
+    WiFi.mode(WIFI_AP);
+
     Serial.print("Setting soft-AP configuration ... ");
     Serial.println(WiFi.softAPConfig(local_IP, gateway, subnet) ? "Ready" : "Failed!");
 
     Serial.print("Setting soft-AP ... ");
-    Serial.println(WiFi.softAP("ESPsoftAP_01") ? "Ready" : "Failed!");
+    Serial.println(WiFi.softAP("ESPsoftAP_04") ? "Ready" : "Failed!");
 
     Serial.print("Soft-AP IP address = ");
     Serial.println(WiFi.softAPIP());
