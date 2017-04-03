@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     func setupCallbacks() {
         socket.event.open = { [unowned self] in
             DispatchQueue.main.async {
+                print("connected")
                 self.connectionButton.setTitle("Disconnect", for: .normal)
                 self.statusLabel.text = "Connected"
                 self.connected = true
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
         }
         socket.event.close = { [unowned self] (code, reason, clean) in
             DispatchQueue.main.async {
+                print("disconnected")
                 self.connectionButton.setTitle("Connect", for: .normal)
                 self.statusLabel.text = "Disconnected"
                 self.connected = false
@@ -46,7 +48,7 @@ class ViewController: UIViewController {
             }
         }
         socket.event.error = { [unowned self] (error) in
-            self.statusLabel.text = "\(error)"
+            print("error: \(error)")
             self.connectionButton.setTitle("Connect", for: .normal)
             self.statusLabel.text = "Disconnected"
             self.connected = false
@@ -58,19 +60,21 @@ class ViewController: UIViewController {
     @IBAction func connectionButtonPressed(_ sender: UIButton) {
         sender.isUserInteractionEnabled = false
         if(connected) {
+            print("disconnect")
             socket.close()
         }
         else {
+            print("connect")
             socket.open(address)
         }
     }
     
     @IBAction func redButtonPressed(_ sender: UIButton) {
-        socket.send("red");
+        socket.send("stop");
     }
     
     @IBAction func greenButtonPressed(_ sender: UIButton) {
-        socket.send("green");
+        socket.send("forward");
     }
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
