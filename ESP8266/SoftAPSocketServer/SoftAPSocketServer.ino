@@ -80,7 +80,7 @@ void setup() {
     Serial.println(WiFi.softAPConfig(local_IP, gateway, subnet) ? "Ready" : "Failed!");
 
     Serial.print("Setting soft-AP ... ");
-    Serial.println(WiFi.softAP("ESPsoftAP_04") ? "Ready" : "Failed!");
+    Serial.println(WiFi.softAP("iCarRemote") ? "Ready" : "Failed!");
 
     Serial.print("Soft-AP IP address = ");
     Serial.println(WiFi.softAPIP());
@@ -91,5 +91,10 @@ void setup() {
 
 void loop() {
     webSocket.loop();
+    if(Serial.available() > 0) 
+    {
+      String msg = Serial.readStringUntil('\n');
+      webSocket.sendTXT(0, msg);
+    }
 }
 
