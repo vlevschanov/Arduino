@@ -8,15 +8,13 @@
 
 import UIKit
 
-enum DrivingCommand: String {
-    case forward="f", backward="b", left="l", right="r", stop="s"
-}
-
 class ControlsViewController: UIViewController, WebSocketManagerDelegate {
     
-    @IBOutlet weak var connectionButton: UIButton!
-    @IBOutlet weak var statusLabel: UILabel!
+    
+    @IBOutlet weak var connectionButton: UIBarButtonItem!
     @IBOutlet var controlButtons: [UIButton]!
+    
+    private let settingsSegue = "showSettings";
     
     private let socketManager = WebSocketManager();
     
@@ -31,7 +29,13 @@ class ControlsViewController: UIViewController, WebSocketManagerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(handleApplicationResign), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
     }
     
-    @IBAction func connect(_ sender: UIButton) {
+    override func viewWillAppear(_ animated: Bool) {
+        socketManager.delegate = self
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func connect(_ sender: UIBarButtonItem) {
         if(!socketManager.connected) {
             socketManager.open()
         }
@@ -47,7 +51,7 @@ class ControlsViewController: UIViewController, WebSocketManagerDelegate {
     @IBAction func backward(_ sender: UIButton) {
         socketManager.sendMessage(message: DrivingCommand.backward.rawValue)
     }
-
+    
     @IBAction func turnRight(_ sender: UIButton) {
         socketManager.sendMessage(message: DrivingCommand.right.rawValue)
     }
@@ -60,20 +64,37 @@ class ControlsViewController: UIViewController, WebSocketManagerDelegate {
         socketManager.sendMessage(message: DrivingCommand.stop.rawValue)
     }
     
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == settingsSegue {
+            if let nc = segue.destination as? NavigationController {
+                if let vc = nc.topViewController as? SettingsViewController {
+                    vc.socketManager = socketManager
+                }
+            }
+        }
+        
+    }
+    
+    // MARK: - WebSocketManagerDelegate
+    
     func socketStateDidChanged(socketManager: WebSocketManager) {
-        statusLabel.text = socketManager.connected ? "Connected" : "Disconnected"
-        if(socketManager.connected) {
-            connectionButton.setTitle("Disconnect", for: .normal)
-        }
-        else {
-            connectionButton.setTitle("Connect", for: .normal)
-        }
+        navigationItem.title = socketManager.connected ? "Connected" : "Disconnected"
+        connectionButton.title = socketManager.connected ? "Disconnect" : "Connect"
         updateControlButtons(socketManager.connected)
     }
     
     func socketDidFailed(socketManager: WebSocketManager, error: Error) {
-        statusLabel.text = "\(error)"
+        navigationItem.title = "\(error)"
     }
+    
+    func socketDidReceiveMessage(socketManager: WebSocketManager, message: String) {
+        
+    }
+    
+    // MARK: - Private
     
     private func updateControlButtons(_ enabled: Bool) {
         for button in controlButtons {

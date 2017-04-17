@@ -15,6 +15,11 @@
 		6A66A5151E92D80C0030C00A /* iCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66A5141E92D80C0030C00A /* iCarTests.swift */; };
 		6A66A5201E92D8A40030C00A /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66A51F1E92D8A40030C00A /* WebSocketManager.swift */; };
 		6A66A5241E92D96F0030C00A /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66A5231E92D96F0030C00A /* ControlsViewController.swift */; };
+		6A8D9FAD1EA4F304000B3648 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D9FAC1EA4F304000B3648 /* Settings.swift */; };
+		6A8D9FAF1EA4F96D000B3648 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D9FAE1EA4F96D000B3648 /* SettingsTableViewCell.swift */; };
+		6A8D9FB11EA4F985000B3648 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8D9FB01EA4F985000B3648 /* SettingsTableViewCell.xib */; };
+		6A8D9FB31EA502A2000B3648 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D9FB21EA502A2000B3648 /* NavigationController.swift */; };
+		6ABD6F4F1EA4E559000FD40C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABD6F4E1EA4E559000FD40C /* SettingsViewController.swift */; };
 		831297380D223352760E2E6B /* Pods_iCarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11693CAFD313E7998006BDF8 /* Pods_iCarTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +48,11 @@
 		6A66A5161E92D80C0030C00A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A66A51F1E92D8A40030C00A /* WebSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
 		6A66A5231E92D96F0030C00A /* ControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
+		6A8D9FAC1EA4F304000B3648 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		6A8D9FAE1EA4F96D000B3648 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		6A8D9FB01EA4F985000B3648 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		6A8D9FB21EA502A2000B3648 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		6ABD6F4E1EA4E559000FD40C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AF66071F391D18FE16DBFB95 /* Pods-iCarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCarTests/Pods-iCarTests.release.xcconfig"; sourceTree = "<group>"; };
 		E42E454CA39EC81A71722402 /* Pods-iCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCar/Pods-iCar.debug.xcconfig"; sourceTree = "<group>"; };
 		E62BF998C1AD271A46BB6F16 /* Pods_iCar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,11 +103,16 @@
 			children = (
 				6A66A4FF1E92D80C0030C00A /* AppDelegate.swift */,
 				6A66A51F1E92D8A40030C00A /* WebSocketManager.swift */,
+				6A8D9FB21EA502A2000B3648 /* NavigationController.swift */,
 				6A66A5231E92D96F0030C00A /* ControlsViewController.swift */,
+				6ABD6F4E1EA4E559000FD40C /* SettingsViewController.swift */,
+				6A8D9FAE1EA4F96D000B3648 /* SettingsTableViewCell.swift */,
+				6A8D9FB01EA4F985000B3648 /* SettingsTableViewCell.xib */,
 				6A66A5031E92D80C0030C00A /* Main.storyboard */,
 				6A66A5061E92D80C0030C00A /* Assets.xcassets */,
 				6A66A5081E92D80C0030C00A /* LaunchScreen.storyboard */,
 				6A66A50B1E92D80C0030C00A /* Info.plist */,
+				6A8D9FAC1EA4F304000B3648 /* Settings.swift */,
 			);
 			path = iCar;
 			sourceTree = "<group>";
@@ -224,6 +239,7 @@
 			files = (
 				6A66A50A1E92D80C0030C00A /* LaunchScreen.storyboard in Resources */,
 				6A66A5071E92D80C0030C00A /* Assets.xcassets in Resources */,
+				6A8D9FB11EA4F985000B3648 /* SettingsTableViewCell.xib in Resources */,
 				6A66A5051E92D80C0030C00A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +353,11 @@
 			files = (
 				6A66A5001E92D80C0030C00A /* AppDelegate.swift in Sources */,
 				6A66A5201E92D8A40030C00A /* WebSocketManager.swift in Sources */,
+				6A8D9FAF1EA4F96D000B3648 /* SettingsTableViewCell.swift in Sources */,
 				6A66A5241E92D96F0030C00A /* ControlsViewController.swift in Sources */,
+				6ABD6F4F1EA4E559000FD40C /* SettingsViewController.swift in Sources */,
+				6A8D9FB31EA502A2000B3648 /* NavigationController.swift in Sources */,
+				6A8D9FAD1EA4F304000B3648 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

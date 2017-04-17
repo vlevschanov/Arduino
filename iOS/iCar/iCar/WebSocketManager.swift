@@ -9,9 +9,14 @@
 import Foundation
 import SwiftWebSocket
 
+enum DrivingCommand: String {
+    case forward="f", backward="b", left="l", right="r", stop="s", getSettings="gs"
+}
+
 protocol WebSocketManagerDelegate: NSObjectProtocol {
     func socketStateDidChanged(socketManager: WebSocketManager)
     func socketDidFailed(socketManager: WebSocketManager, error: Error)
+    func socketDidReceiveMessage(socketManager: WebSocketManager, message: String)
 }
 
 class WebSocketManager {
@@ -44,6 +49,12 @@ class WebSocketManager {
             self.connected = false
             self.error = error
             self.delegate?.socketDidFailed(socketManager: self, error: error)
+        }
+        socket.event.message = { [unowned self] (data) in
+            if let stringData = data as? String {
+                print(stringData)
+                self.delegate?.socketDidReceiveMessage(socketManager: self, message: stringData)
+            }
         }
     }
     

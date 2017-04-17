@@ -4,6 +4,8 @@ target 'iCar' do
   use_frameworks!
 
   pod 'SwiftWebSocket', '~> 2.6'
+  pod 'NVActivityIndicatorView'
+  pod 'Toast-Swift', '~> 2.0.0'
 
   target 'iCarTests' do
     inherit! :search_paths
