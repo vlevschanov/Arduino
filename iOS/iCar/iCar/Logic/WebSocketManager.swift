@@ -13,47 +13,50 @@ enum DrivingCommand: String {
     case forward="f", backward="b", left="l", right="r", stop="s", getSettings="gs"
 }
 
-protocol WebSocketManagerDelegate: NSObjectProtocol {
-    func socketStateDidChanged(socketManager: WebSocketManager)
+protocol WebSocketStateDelegate: class {
+    func didOpenSocket(socketManager: WebSocketManager)
+    func didCloseSocket(socketManager: WebSocketManager)
+}
+
+protocol WebSocketManagerDelegate: class {
     func socketDidFailed(socketManager: WebSocketManager, error: Error)
     func socketDidReceiveMessage(socketManager: WebSocketManager, message: String)
 }
 
 class WebSocketManager {
     
+    static let sharedManager = WebSocketManager()
+    
+    weak var actionDelegate: WebSocketManagerDelegate?
+    weak var stateDelegate: WebSocketStateDelegate?
+    
     private let address = "ws://192.168.4.22:81"
     private let socket = WebSocket()
     
-    var connected = false
-    var error: Error?
-    weak var delegate: WebSocketManagerDelegate?
+    private(set) var connected = false
+    private(set) var error: Error?
     
-    init(delegate: WebSocketManagerDelegate? = nil) {
-        self.delegate = delegate
+    private init() {
         socket.event.open = { [unowned self] in
-            DispatchQueue.main.async {
-                print("connected")
-                self.connected = true
-                self.delegate?.socketStateDidChanged(socketManager: self)
-            }
+            print("connected")
+            self.connected = true
+            self.stateDelegate?.didOpenSocket(socketManager: self)
         }
         socket.event.close = { [unowned self] (code, reason, clean) in
-            DispatchQueue.main.async {
-                print("disconnected")
-                self.connected = false
-                self.delegate?.socketStateDidChanged(socketManager: self)
-            }
+            print("disconnected")
+            self.connected = false
+            self.stateDelegate?.didCloseSocket(socketManager: self)
         }
         socket.event.error = { [unowned self] (error) in
             print("error: \(error)")
             self.connected = false
             self.error = error
-            self.delegate?.socketDidFailed(socketManager: self, error: error)
+            self.actionDelegate?.socketDidFailed(socketManager: self, error: error)
         }
         socket.event.message = { [unowned self] (data) in
             if let stringData = data as? String {
                 print(stringData)
-                self.delegate?.socketDidReceiveMessage(socketManager: self, message: stringData)
+                self.actionDelegate?.socketDidReceiveMessage(socketManager: self, message: stringData)
             }
         }
     }
@@ -70,6 +73,7 @@ class WebSocketManager {
     }
     
     func sendMessage(message: String) {
+        print("sending: \(message)")
         if(connected) {
             socket.send(message)
         }

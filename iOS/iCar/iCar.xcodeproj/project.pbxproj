@@ -8,18 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		339841CE3A1FFE839DAB9DE8 /* Pods_iCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E62BF998C1AD271A46BB6F16 /* Pods_iCar.framework */; };
+		6A563EED1EA53C6400F35077 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563EE21EA53C6400F35077 /* Settings.swift */; };
+		6A563EEF1EA53C6400F35077 /* SpeedSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563EE71EA53C6400F35077 /* SpeedSettingsCell.swift */; };
+		6A563EF01EA53C6400F35077 /* SpeedSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A563EE81EA53C6400F35077 /* SpeedSettingsCell.xib */; };
+		6A563EF11EA53C6400F35077 /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563EEA1EA53C6400F35077 /* ControlsViewController.swift */; };
+		6A563EF21EA53C6400F35077 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563EEB1EA53C6400F35077 /* NavigationController.swift */; };
+		6A563EF31EA53C6400F35077 /* SpeedSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563EEC1EA53C6400F35077 /* SpeedSettingsViewController.swift */; };
+		6A563EF91EA53C8300F35077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A563EF51EA53C8300F35077 /* LaunchScreen.storyboard */; };
+		6A563EFA1EA53C8300F35077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A563EF71EA53C8300F35077 /* Main.storyboard */; };
+		6A563EFC1EA53D0B00F35077 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563EFB1EA53D0B00F35077 /* BaseViewController.swift */; };
+		6A563EFF1EA5433D00F35077 /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563EFE1EA5433D00F35077 /* WebSocketManager.swift */; };
+		6A563F011EA5435600F35077 /* ControlsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563F001EA5435600F35077 /* ControlsUseCase.swift */; };
+		6A563F031EA5449B00F35077 /* SettingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563F021EA5449B00F35077 /* SettingsUseCase.swift */; };
+		6A563F051EA545CC00F35077 /* WebSocketUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563F041EA545CC00F35077 /* WebSocketUseCase.swift */; };
+		6A563F071EA547ED00F35077 /* ConnectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563F061EA547ED00F35077 /* ConnectionUseCase.swift */; };
+		6A563F091EA54B6200F35077 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A563F081EA54B6200F35077 /* ConnectViewController.swift */; };
 		6A66A5001E92D80C0030C00A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66A4FF1E92D80C0030C00A /* AppDelegate.swift */; };
-		6A66A5051E92D80C0030C00A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A66A5031E92D80C0030C00A /* Main.storyboard */; };
 		6A66A5071E92D80C0030C00A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A66A5061E92D80C0030C00A /* Assets.xcassets */; };
-		6A66A50A1E92D80C0030C00A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A66A5081E92D80C0030C00A /* LaunchScreen.storyboard */; };
 		6A66A5151E92D80C0030C00A /* iCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66A5141E92D80C0030C00A /* iCarTests.swift */; };
-		6A66A5201E92D8A40030C00A /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66A51F1E92D8A40030C00A /* WebSocketManager.swift */; };
-		6A66A5241E92D96F0030C00A /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A66A5231E92D96F0030C00A /* ControlsViewController.swift */; };
-		6A8D9FAD1EA4F304000B3648 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D9FAC1EA4F304000B3648 /* Settings.swift */; };
-		6A8D9FAF1EA4F96D000B3648 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D9FAE1EA4F96D000B3648 /* SettingsTableViewCell.swift */; };
-		6A8D9FB11EA4F985000B3648 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8D9FB01EA4F985000B3648 /* SettingsTableViewCell.xib */; };
-		6A8D9FB31EA502A2000B3648 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8D9FB21EA502A2000B3648 /* NavigationController.swift */; };
-		6ABD6F4F1EA4E559000FD40C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABD6F4E1EA4E559000FD40C /* SettingsViewController.swift */; };
 		831297380D223352760E2E6B /* Pods_iCarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11693CAFD313E7998006BDF8 /* Pods_iCarTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,22 +43,28 @@
 		11693CAFD313E7998006BDF8 /* Pods_iCarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BF4F3C672B4EDD21349AC7 /* Pods-iCarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCarTests/Pods-iCarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		671AA14F47EF08AD3FE19BFB /* Pods-iCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCar/Pods-iCar.release.xcconfig"; sourceTree = "<group>"; };
+		6A563EE21EA53C6400F35077 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		6A563EE71EA53C6400F35077 /* SpeedSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedSettingsCell.swift; sourceTree = "<group>"; };
+		6A563EE81EA53C6400F35077 /* SpeedSettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeedSettingsCell.xib; sourceTree = "<group>"; };
+		6A563EEA1EA53C6400F35077 /* ControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
+		6A563EEB1EA53C6400F35077 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		6A563EEC1EA53C6400F35077 /* SpeedSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedSettingsViewController.swift; sourceTree = "<group>"; };
+		6A563EF61EA53C8300F35077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6A563EF81EA53C8300F35077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A563EFB1EA53D0B00F35077 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		6A563EFE1EA5433D00F35077 /* WebSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
+		6A563F001EA5435600F35077 /* ControlsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsUseCase.swift; sourceTree = "<group>"; };
+		6A563F021EA5449B00F35077 /* SettingsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUseCase.swift; sourceTree = "<group>"; };
+		6A563F041EA545CC00F35077 /* WebSocketUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketUseCase.swift; sourceTree = "<group>"; };
+		6A563F061EA547ED00F35077 /* ConnectionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionUseCase.swift; sourceTree = "<group>"; };
+		6A563F081EA54B6200F35077 /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		6A66A4FC1E92D80C0030C00A /* iCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A66A4FF1E92D80C0030C00A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A66A5041E92D80C0030C00A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A66A5061E92D80C0030C00A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6A66A5091E92D80C0030C00A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A66A50B1E92D80C0030C00A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A66A5101E92D80C0030C00A /* iCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A66A5141E92D80C0030C00A /* iCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCarTests.swift; sourceTree = "<group>"; };
 		6A66A5161E92D80C0030C00A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A66A51F1E92D8A40030C00A /* WebSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
-		6A66A5231E92D96F0030C00A /* ControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
-		6A8D9FAC1EA4F304000B3648 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		6A8D9FAE1EA4F96D000B3648 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		6A8D9FB01EA4F985000B3648 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
-		6A8D9FB21EA502A2000B3648 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		6ABD6F4E1EA4E559000FD40C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AF66071F391D18FE16DBFB95 /* Pods-iCarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCarTests/Pods-iCarTests.release.xcconfig"; sourceTree = "<group>"; };
 		E42E454CA39EC81A71722402 /* Pods-iCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCar/Pods-iCar.debug.xcconfig"; sourceTree = "<group>"; };
 		E62BF998C1AD271A46BB6F16 /* Pods_iCar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +90,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A563EE11EA53C6400F35077 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A563EE21EA53C6400F35077 /* Settings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6A563EE51EA53C6400F35077 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6A563EF41EA53C8300F35077 /* Storyboards */,
+				6A563EE61EA53C6400F35077 /* Cells */,
+				6A563EE91EA53C6400F35077 /* ViewControllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6A563EE61EA53C6400F35077 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6A563EE71EA53C6400F35077 /* SpeedSettingsCell.swift */,
+				6A563EE81EA53C6400F35077 /* SpeedSettingsCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6A563EE91EA53C6400F35077 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6A563EEB1EA53C6400F35077 /* NavigationController.swift */,
+				6A563EFB1EA53D0B00F35077 /* BaseViewController.swift */,
+				6A563F081EA54B6200F35077 /* ConnectViewController.swift */,
+				6A563EEA1EA53C6400F35077 /* ControlsViewController.swift */,
+				6A563EEC1EA53C6400F35077 /* SpeedSettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6A563EF41EA53C8300F35077 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6A563EF51EA53C8300F35077 /* LaunchScreen.storyboard */,
+				6A563EF71EA53C8300F35077 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6A563EFD1EA5433D00F35077 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				6A563EFE1EA5433D00F35077 /* WebSocketManager.swift */,
+				6A563F041EA545CC00F35077 /* WebSocketUseCase.swift */,
+				6A563F061EA547ED00F35077 /* ConnectionUseCase.swift */,
+				6A563F001EA5435600F35077 /* ControlsUseCase.swift */,
+				6A563F021EA5449B00F35077 /* SettingsUseCase.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
 		6A66A4F31E92D80C0030C00A = {
 			isa = PBXGroup;
 			children = (
@@ -102,17 +174,11 @@
 			isa = PBXGroup;
 			children = (
 				6A66A4FF1E92D80C0030C00A /* AppDelegate.swift */,
-				6A66A51F1E92D8A40030C00A /* WebSocketManager.swift */,
-				6A8D9FB21EA502A2000B3648 /* NavigationController.swift */,
-				6A66A5231E92D96F0030C00A /* ControlsViewController.swift */,
-				6ABD6F4E1EA4E559000FD40C /* SettingsViewController.swift */,
-				6A8D9FAE1EA4F96D000B3648 /* SettingsTableViewCell.swift */,
-				6A8D9FB01EA4F985000B3648 /* SettingsTableViewCell.xib */,
-				6A66A5031E92D80C0030C00A /* Main.storyboard */,
+				6A563EFD1EA5433D00F35077 /* Logic */,
+				6A563EE11EA53C6400F35077 /* Model */,
+				6A563EE51EA53C6400F35077 /* UI */,
 				6A66A5061E92D80C0030C00A /* Assets.xcassets */,
-				6A66A5081E92D80C0030C00A /* LaunchScreen.storyboard */,
 				6A66A50B1E92D80C0030C00A /* Info.plist */,
-				6A8D9FAC1EA4F304000B3648 /* Settings.swift */,
 			);
 			path = iCar;
 			sourceTree = "<group>";
@@ -237,10 +303,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A66A50A1E92D80C0030C00A /* LaunchScreen.storyboard in Resources */,
 				6A66A5071E92D80C0030C00A /* Assets.xcassets in Resources */,
-				6A8D9FB11EA4F985000B3648 /* SettingsTableViewCell.xib in Resources */,
-				6A66A5051E92D80C0030C00A /* Main.storyboard in Resources */,
+				6A563EF01EA53C6400F35077 /* SpeedSettingsCell.xib in Resources */,
+				6A563EFA1EA53C8300F35077 /* Main.storyboard in Resources */,
+				6A563EF91EA53C8300F35077 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,13 +417,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A563EED1EA53C6400F35077 /* Settings.swift in Sources */,
+				6A563EF21EA53C6400F35077 /* NavigationController.swift in Sources */,
+				6A563EF31EA53C6400F35077 /* SpeedSettingsViewController.swift in Sources */,
 				6A66A5001E92D80C0030C00A /* AppDelegate.swift in Sources */,
-				6A66A5201E92D8A40030C00A /* WebSocketManager.swift in Sources */,
-				6A8D9FAF1EA4F96D000B3648 /* SettingsTableViewCell.swift in Sources */,
-				6A66A5241E92D96F0030C00A /* ControlsViewController.swift in Sources */,
-				6ABD6F4F1EA4E559000FD40C /* SettingsViewController.swift in Sources */,
-				6A8D9FB31EA502A2000B3648 /* NavigationController.swift in Sources */,
-				6A8D9FAD1EA4F304000B3648 /* Settings.swift in Sources */,
+				6A563EEF1EA53C6400F35077 /* SpeedSettingsCell.swift in Sources */,
+				6A563F051EA545CC00F35077 /* WebSocketUseCase.swift in Sources */,
+				6A563F011EA5435600F35077 /* ControlsUseCase.swift in Sources */,
+				6A563F071EA547ED00F35077 /* ConnectionUseCase.swift in Sources */,
+				6A563F031EA5449B00F35077 /* SettingsUseCase.swift in Sources */,
+				6A563EFF1EA5433D00F35077 /* WebSocketManager.swift in Sources */,
+				6A563F091EA54B6200F35077 /* ConnectViewController.swift in Sources */,
+				6A563EFC1EA53D0B00F35077 /* BaseViewController.swift in Sources */,
+				6A563EF11EA53C6400F35077 /* ControlsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,20 +452,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6A66A5031E92D80C0030C00A /* Main.storyboard */ = {
+		6A563EF51EA53C8300F35077 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6A66A5041E92D80C0030C00A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6A66A5081E92D80C0030C00A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6A66A5091E92D80C0030C00A /* Base */,
+				6A563EF61EA53C8300F35077 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6A563EF71EA53C8300F35077 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A563EF81EA53C8300F35077 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

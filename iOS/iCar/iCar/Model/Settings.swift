@@ -8,14 +8,16 @@
 
 struct Settings {
     
-    var frontLeftForwardSpeed: Int
-    var frontLeftBackwardSpeed: Int
-    var frontRightForwardSpeed: Int
-    var frontRightBackwardSpeed: Int
-    var rearLeftForwardSpeed: Int
-    var rearLeftBackwardSpeed: Int
-    var rearRightForwrdSpeed: Int
-    var rearRightBackwardSpeed: Int
+    var frontLeftForwardSpeed: Int = 0
+    var frontLeftBackwardSpeed: Int = 0
+    var frontRightForwardSpeed: Int = 0
+    var frontRightBackwardSpeed: Int = 0
+    var rearLeftForwardSpeed: Int = 0
+    var rearLeftBackwardSpeed: Int = 0
+    var rearRightForwardSpeed: Int = 0
+    var rearRightBackwardSpeed: Int = 0
+    
+    init() { }
 
     init(withJson json: [String:Any]) {
         frontLeftForwardSpeed = json["fl_fwd"] as! Int
@@ -24,7 +26,7 @@ struct Settings {
         frontRightBackwardSpeed = json["fr_bwd"] as! Int
         rearLeftForwardSpeed = json["rl_fwd"] as! Int
         rearLeftBackwardSpeed = json["rl_bwd"] as! Int
-        rearRightForwrdSpeed = json["rr_fwd"] as! Int
+        rearRightForwardSpeed = json["rr_fwd"] as! Int
         rearRightBackwardSpeed = json["rr_bwd"] as! Int
     }
     
@@ -36,7 +38,7 @@ struct Settings {
             "fr_bwd" : frontRightBackwardSpeed,
             "rl_fwd" : rearLeftForwardSpeed,
             "rl_bwd" : rearLeftBackwardSpeed,
-            "rr_fwd" : rearRightForwrdSpeed,
+            "rr_fwd" : rearRightForwardSpeed,
             "rr_bwd" : rearRightBackwardSpeed
         ]
     }
