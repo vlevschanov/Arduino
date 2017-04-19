@@ -10,7 +10,7 @@ import Foundation
 import SwiftWebSocket
 
 enum DrivingCommand: String {
-    case forward="f", backward="b", left="l", right="r", stop="s", getSettings="gs"
+    case forward="f", backward="b", left="l", right="r", stop="s", getSettings="gs", setSettings="ss:%@", resetSettings="rs"
 }
 
 protocol WebSocketStateDelegate: class {
@@ -21,11 +21,14 @@ protocol WebSocketStateDelegate: class {
 protocol WebSocketManagerDelegate: class {
     func socketDidFailed(socketManager: WebSocketManager, error: Error)
     func socketDidReceiveMessage(socketManager: WebSocketManager, message: String)
+    func socketDidSucceded(socketManager: WebSocketManager)
 }
 
 class WebSocketManager {
     
     static let sharedManager = WebSocketManager()
+    
+    let errorDomain = "WebSocketError"
     
     weak var actionDelegate: WebSocketManagerDelegate?
     weak var stateDelegate: WebSocketStateDelegate?
@@ -56,7 +59,15 @@ class WebSocketManager {
         socket.event.message = { [unowned self] (data) in
             if let stringData = data as? String {
                 print(stringData)
-                self.actionDelegate?.socketDidReceiveMessage(socketManager: self, message: stringData)
+                if stringData == "200" {
+                    self.actionDelegate?.socketDidSucceded(socketManager: self)
+                }
+                else if stringData == "400" {
+                    self.actionDelegate?.socketDidFailed(socketManager: self, error: NSError(domain: self.errorDomain, code: 400, userInfo: [NSLocalizedDescriptionKey:"Bad request"]))
+                }
+                else {
+                    self.actionDelegate?.socketDidReceiveMessage(socketManager: self, message: stringData)
+                }
             }
         }
     }

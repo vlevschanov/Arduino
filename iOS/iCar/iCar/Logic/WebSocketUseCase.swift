@@ -40,4 +40,8 @@ class WebSocketUseCase: NSObject, WebSocketManagerDelegate {
     func socketDidReceiveMessage(socketManager: WebSocketManager, message: String) {
         //no-op
     }
+    
+    func socketDidSucceded(socketManager: WebSocketManager) {
+        //no-op
+    }
 }

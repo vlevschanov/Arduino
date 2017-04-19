@@ -9,22 +9,23 @@
 import UIKit
 
 
-class SpeedSettingsViewController: BaseViewController, WebSocketUseCaseDelegate, SpeedSettingsCellDelegate, UITableViewDataSource, UITableViewDelegate {
+class SpeedSettingsViewController: BaseViewController, WebSocketUseCaseDelegate, SpeedSettingsCellDelegate {
 
     let settingsUseCase = SettingsUseCase(withSocketManager: WebSocketManager.sharedManager)
     
-    private let sections = ["Front left motor", "Front right motor", "Rear left motor", "Rear right motor"]
-    private let rows = ["Forward speed", "Backward speed"]
+    fileprivate let sections = ["Front left motor", "Front right motor", "Rear left motor", "Rear right motor"]
+    fileprivate let rows = ["Forward speed", "Backward speed"]
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var settings = Settings()
+    fileprivate var settings = Settings()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
         automaticallyAdjustsScrollViewInsets = false
         tableView.register(UINib.init(nibName: "SpeedSettingsCell", bundle: Bundle.main), forCellReuseIdentifier: SpeedSettingsCell.reuseIdentifier())
+        settingsUseCase.delegate = self
         
         reloadSettings()
     }
@@ -42,6 +43,7 @@ class SpeedSettingsViewController: BaseViewController, WebSocketUseCaseDelegate,
     // MARK: - WebSocketUseCaseDelegate
     
     func useCaseDidFailWithError(useCase: WebSocketUseCase, error: Error) {
+        hideLoadingView()
         showToastMessage(message: "\(error)")
     }
     
@@ -88,11 +90,17 @@ class SpeedSettingsViewController: BaseViewController, WebSocketUseCaseDelegate,
     // MARK: - Actions
 
     @IBAction func reset(_ sender: UIBarButtonItem) {
-        reloadSettings()
+        showLoadingView()
+        settingsUseCase.reset { [weak self] (settings) in
+            self?.settingsUpdated(settings)
+        }
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
-        
+        showLoadingView()
+        settingsUseCase.save(settings: settings) { [weak self] (settings) in
+            self?.settingsUpdated(settings)
+        }
     }
     
     // MARK: - Private 
@@ -100,15 +108,19 @@ class SpeedSettingsViewController: BaseViewController, WebSocketUseCaseDelegate,
     private func reloadSettings() {
         showLoadingView()
         settingsUseCase.requestSettings { [weak self] (settings) in
-            self?.hideLoadingView()
-            self?.settings = settings
-            self?.tableView.reloadData()
+            self?.settingsUpdated(settings)
         }
     }
+    
+    private func settingsUpdated(_ newSettings: Settings) {
+        hideLoadingView()
+        settings = newSettings
+        tableView.reloadData()
+    }
+}
 
-    // MARK: - UITableViewDataSource
-    
-    
+extension SpeedSettingsViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rows.count
     }
@@ -142,6 +154,7 @@ class SpeedSettingsViewController: BaseViewController, WebSocketUseCaseDelegate,
         default: break
         }
         cell.configure(viewModel: SpeedSettingsCellViewModel(title: title, value: value))
+        cell.delegate = self
         return cell
     }
     
