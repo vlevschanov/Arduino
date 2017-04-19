@@ -60,7 +60,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t lenght
 
 void setup() {
   
-    Serial.begin(115200);
+    Serial.begin(9600);
 
     //Serial.setDebugOutput(true);
 
